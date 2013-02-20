@@ -14,11 +14,10 @@ function iterateThroughJs(rootPath, callback) {
     for (var key in arrayOfFiles) {
       var path = arrayOfFiles[key];
       if (path.slice(0,1) !== ".") {
-        iterateThroughJs(path, callback);
+        iterateThroughJs(rootPath + "/" + path, callback);
       }
     }
   }
-
 
   function isJavaScriptFile() {
     return (stats.isFile(rootPath) && rootPath.slice(-3) === ".js");
