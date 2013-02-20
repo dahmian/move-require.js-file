@@ -1,7 +1,9 @@
+
 iterateThroughJs("./", test);
 
 function test(path) {
-  console.log(path);
+  var replace = require("./replaceInFile.js");
+  replace.replaceInFile("function", "FUNction", path);
 }
 
 function iterateThroughJs(rootPath, callback) {

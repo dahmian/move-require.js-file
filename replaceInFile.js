@@ -1,3 +1,5 @@
+exports.replaceInFile = replaceInFile;
+
 function replaceInFile(searchString, replaceString, fileName) {
   var search = new RegExp(searchString, "g");
   var file = readFile(fileName);
