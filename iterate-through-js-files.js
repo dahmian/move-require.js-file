@@ -10,6 +10,10 @@ function iterateThroughJs(rootPath, callback) {
   if (isJavaScriptFile()) {
     callback(rootPath)
   } else if (stats.isDirectory()) {
+    iterateDirectory(rootPath);
+  }
+
+  function iterateDirectory(rootPath) {
     var arrayOfFiles = fs.readdirSync(rootPath);
     for (var key in arrayOfFiles) {
       var path = arrayOfFiles[key];
@@ -18,6 +22,7 @@ function iterateThroughJs(rootPath, callback) {
       }
     }
   }
+
 
   function isJavaScriptFile() {
     return (stats.isFile(rootPath) && rootPath.slice(-3) === ".js");
