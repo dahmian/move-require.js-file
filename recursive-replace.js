@@ -13,7 +13,7 @@ function convertToRequireFormat(path) {
 }
 
 function replaceInFile(path) {
-  var replace = require("./node-file/replaceInFile.js");
+  var replace = require("./node-file/replace-in-file.js");
   replace.replaceInFile(searchString, replaceString, path);
 }
 
