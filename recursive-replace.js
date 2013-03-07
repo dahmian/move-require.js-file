@@ -3,7 +3,7 @@ var rootPath = "Resources/js/";
 searchString = convertToRequireFormat(process.argv[2]);
 replaceString = convertToRequireFormat(process.argv[3]);
 
-var iterateThroughJs = require("./iterate-through-js-files.js").iterateThroughJs;
+var iterateThroughJs = require("./node-file/iterate-through-js-files.js").iterateThroughJs;
 iterateThroughJs(rootPath, replaceInFile);
 runGitMove();
 
@@ -13,7 +13,7 @@ function convertToRequireFormat(path) {
 }
 
 function replaceInFile(path) {
-  var replace = require("./replaceInFile.js");
+  var replace = require("./node-file/replaceInFile.js");
   replace.replaceInFile(searchString, replaceString, path);
 }
 
