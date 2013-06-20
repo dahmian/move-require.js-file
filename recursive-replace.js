@@ -1,4 +1,5 @@
-var rootPath = "Resources/js/";
+var rootPath = require("./config.json").rootPath;
+console.log(rootPath);
 
 searchString = convertToRequireFormat(process.argv[2]);
 replaceString = convertToRequireFormat(process.argv[3]);
